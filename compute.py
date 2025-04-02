@@ -133,70 +133,48 @@ def generate_mixture_samples(sizes, n_iterations=1000):
 
 def plot_samples_and_ellipse(size, rho):
     """
-    Visualization of samples and equal probability ellipse
+    Visualization of samples and equal probability ellipses
+    (theoretical and sample-based)
     """
-    cov = np.array([[1, rho], [rho, 1]])
-    data = np.random.multivariate_normal(mean=[0, 0], cov=cov, size=size)
+    # Theoretical covariance
+    cov_theory = np.array([[1, rho], [rho, 1]])
+    data = np.random.multivariate_normal(mean=[0, 0], cov=cov_theory, size=size)
 
-    # Calculate ellipse parameters
-    lambda_, v = np.linalg.eig(cov)
-    lambda_ = np.sqrt(lambda_)
+    # Sample covariance
+    cov_sample = np.cov(data, rowvar=False)
 
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.scatter(data[:, 0], data[:, 1], alpha=0.6)
 
-    # Draw ellipse (2 standard deviations)
-    ellipse = Ellipse(xy=(0, 0),
-                      width=2 * lambda_[0] * 2,  # 2 standard deviations
-                      height=2 * lambda_[1] * 2,
-                      angle=np.degrees(np.arccos(v[0, 0])),
-                      edgecolor='r', fc='None', lw=2)
-    ax.add_patch(ellipse)
+    # Draw theoretical ellipse (red)
+    lambda_theory, v_theory = np.linalg.eig(cov_theory)
+    lambda_theory = np.sqrt(lambda_theory)
+    ellipse_theory = Ellipse(xy=(0, 0),
+                             width=2 * lambda_theory[0] * 2,
+                             height=2 * lambda_theory[1] * 2,
+                             angle=np.degrees(np.arccos(v_theory[0, 0])),
+                             edgecolor='r', fc='None', lw=2, linestyle='--',
+                             label='Theoretical')
+    ax.add_patch(ellipse_theory)
+
+    # Draw sample ellipse
+    if size > 1:  # Covariance is defined for sample size > 1
+        lambda_sample, v_sample = np.linalg.eig(cov_sample)
+        lambda_sample = np.sqrt(lambda_sample)
+        ellipse_sample = Ellipse(xy=(np.mean(data[:, 0]), np.mean(data[:, 1])),
+                                 width=2 * lambda_sample[0] * 2,
+                                 height=2 * lambda_sample[1] * 2,
+                                 angle=np.degrees(np.arccos(v_sample[0, 0])),
+                                 edgecolor='b', fc='None', lw=2,
+                                 label='Sample-based')
+        ax.add_patch(ellipse_sample)
 
     ax.set_xlim(-4, 4)
     ax.set_ylim(-4, 4)
     ax.set_title(f'Sample size: {size}, ρ: {rho}')
+    ax.legend()
     ax.grid(True)
 
     filename = f'plots/normal_dist_size_{size}_rho_{rho}.png'
-    plt.savefig(filename, bbox_inches='tight', dpi=100)
-    plt.close(fig)
-
-
-def plot_mixture_samples(size):
-    """
-    Visualization of samples from mixture distribution
-    """
-    cov1 = np.array([[1, 0.9], [0.9, 1]])
-    cov2 = np.array([[10, -0.9], [-0.9, 10]])
-
-    n1 = int(0.9 * size)
-    n2 = size - n1
-
-    data1 = np.random.multivariate_normal(mean=[0, 0], cov=cov1, size=n1)
-    data2 = np.random.multivariate_normal(mean=[0, 0], cov=cov2, size=n2)
-    data = np.vstack((data1, data2))
-
-    fig, ax = plt.subplots(figsize=(8, 8))
-    ax.scatter(data[:, 0], data[:, 1], alpha=0.6)
-
-    # Ellipses for each distribution in the mixture
-    for cov, color in [(cov1, 'r'), (cov2, 'g')]:
-        lambda_, v = np.linalg.eig(cov)
-        lambda_ = np.sqrt(lambda_)
-
-        ellipse = Ellipse(xy=(0, 0),
-                          width=2 * lambda_[0] * 2,
-                          height=2 * lambda_[1] * 2,
-                          angle=np.degrees(np.arccos(v[0, 0])),
-                          edgecolor=color, fc='None', lw=2)
-        ax.add_patch(ellipse)
-
-    ax.set_xlim(-15, 15)
-    ax.set_ylim(-15, 15)
-    ax.set_title(f'Mixture distribution, sample size: {size}')
-    ax.grid(True)
-
-    filename = f'plots/mixture_dist_size_{size}.png'
     plt.savefig(filename, bbox_inches='tight', dpi=100)
     plt.close(fig)

@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0118724-bcf7-4671-a3e3-7a6fc5d2a5f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/math_stat_lab_3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compute.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="b0118724-bcf7-4671-a3e3-7a6fc5d2a5f4" name="Changes" comment="Finished code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/mixture_dist_size_100.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/mixture_dist_size_100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/mixture_dist_size_20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/mixture_dist_size_20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/mixture_dist_size_60.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/mixture_dist_size_60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.5.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_100_rho_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.5.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_20_rho_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.5.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/normal_dist_size_60_rho_0.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +45,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.compute.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.compute.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -62,6 +69,19 @@
       <option name="presentableId" value="Default" />
       <updated>1742152321879</updated>
     </task>
+    <task id="LOCAL-00001" summary="Finished code">
+      <option name="closed" value="true" />
+      <created>1743574152648</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743574152648</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished code" />
   </component>
 </project>

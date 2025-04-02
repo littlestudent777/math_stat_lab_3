@@ -17,6 +17,5 @@ if not os.path.exists('plots'):
 for size in sizes:
     for rho in rhos:
         compute.plot_samples_and_ellipse(size, rho)
-        compute.plot_mixture_samples(size)
 
 print("\nPlots are saved in 'plots' folder")
